@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{data.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-card>
+
+        <img  [src]="data.thumbnail_images.full.url" style="width: 100%" alt="">
+      
+        <ion-item>
+          <h2 [innerHTML]="data.title"></h2>
+          <p>{{data.date | date}}</p>
+        </ion-item>
+      </ion-card>
+
+      <ion-card style="padding: 5px">
+        <p [innerHTML]="data.content"></p>
+      </ion-card>
+
+      <ion-card>
+            <ion-item>
+              Non Disclosure Agreement
+              <ion-icon name="download" item-end></ion-icon>
+            </ion-item>
+        </ion-card>
+
+      <ion-card>
+        <ion-row>
+            <ion-col col-3><a href="mailto:norman@vote-africa.org"><button ion-button full><ion-icon name="mail-open"></ion-icon></button></a></ion-col>
+            <ion-col col-3><a href="tel:263782156637"><button ion-button full><ion-icon name="call"></ion-icon></button></a></ion-col>
+            <ion-col col-3><button (click)="bookmark()" ion-button full><ion-icon name="bookmarks"></ion-icon></button></ion-col>
+            <ion-col col-3><button (click)="share()" ion-button full><ion-icon name="share"></ion-icon></button></ion-col>
+        </ion-row>      
+      </ion-card>
+
+</ion-content>

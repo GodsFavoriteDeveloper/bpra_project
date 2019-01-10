@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{data.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+
+<ion-card>
+    <img  [src]="data.banner" style="width: 100%" alt="">
+  
+    <ion-item>
+      <span item-start>{{data.date}}</span> <span item-end>{{data.category}}</span>
+    </ion-item>
+  </ion-card>
+
+  <ion-card style="padding: 8px">
+    <p [innerHTML]="data.body"></p>
+  </ion-card>
+
+  <ion-fab (click)="share()" right bottom>
+      <button ion-fab color="danger"><ion-icon name="share"></ion-icon></button>
+    </ion-fab>
+
+  <!--<ion-card>
+    <ion-row>
+        <ion-col col-6><button (click)="bookmark()" ion-button full><ion-icon name="bookmarks"></ion-icon> &nbsp; &nbsp;&nbsp;Comment</button></ion-col>
+        <ion-col col-6><button (click)="share()" ion-button full><ion-icon name="share"></ion-icon>&nbsp;&nbsp;&nbsp;Share</button></ion-col>
+    </ion-row>      
+  </ion-card>-->
+
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/avatar.png" alt="">
+      </ion-avatar>
+      <p><b>Norman Dube</b></p>
+      <p>The water situation in Bulawayo is very bad guys hayibooooo</p>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/avatar.png" alt="">
+      </ion-avatar>
+      <p><b>Chris Rock</b></p>
+      <p>Eareani lami eMzilikazi amanzi ayinatshi</p>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/avatar.png" alt="">
+      </ion-avatar>
+      <p><b>Ben Dhliwayo</b></p>
+      <p>The council is doing well in Ntumbane</p>
+    </ion-item>
+    <div style="padding: 5px">
+      <button (click)="comment()" ion-button block color="primary">Add Comment</button>
+    </div>
+  </ion-card>
+
+</ion-content>

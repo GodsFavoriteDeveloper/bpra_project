@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Categories</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+      <ion-card *ngFor="let category of categories" (click)="itemTapped($event, category)">
+          <ion-item>
+            <!--<ion-icon name="{{category.description}}" item-start></ion-icon>-->
+              {{category.title}}
+              <ion-badge item-end>{{category.post_count}}</ion-badge>
+          </ion-item>
+      </ion-card>
+
+</ion-content>

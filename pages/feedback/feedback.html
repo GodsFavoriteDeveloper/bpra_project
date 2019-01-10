@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Feedback</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="capture()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+          <ion-label stacked>Name</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label stacked>Select Ward</ion-label>
+          <ion-select>
+            <ion-option value="rfp1">Ward 1</ion-option>
+            <ion-option value="rfp2">Ward 2</ion-option>
+            <ion-option value="rfp3">Ward 3</ion-option>
+            <ion-option value="rfp4">Ward 4</ion-option>
+            <ion-option value="rfp5">Ward 5</ion-option>
+            <ion-option value="rfp6">Ward 6</ion-option>
+            <ion-option value="rfp7">Ward 7</ion-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label stacked>Long Description</ion-label>
+          <ion-textarea type="text"></ion-textarea>
+        </ion-item>
+      </ion-list>
+      <div style="padding-left: 5px; padding-right: 5px"><button ion-button (click)="submit()" block>Submit Feedback</button></div>
+
+      <img *ngIf="base64Image" [src]="base64Image" alt="">
+
+</ion-content>

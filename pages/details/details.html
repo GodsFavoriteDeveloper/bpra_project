@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>About Project</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+      <img src="assets/img/bpra.jpg" style="width: 100%" alt="">
+
+    </ion-card>
+
+    <ion-card (click)="navigate('BpraPage', 'R')">
+      <ion-item>
+        <ion-icon name="information-circle" item-start></ion-icon>
+        About BPRA
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+          <ion-icon name="done-all" item-start></ion-icon>
+          BPRA Updates
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+          <ion-icon name="book" item-start></ion-icon>
+          Success Stories
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+        <ion-item>
+          <ion-icon name="calendar" item-start></ion-icon>
+          Our Events
+        </ion-item>
+    </ion-card>
+
+    <ion-card (click)="navigate('ContactPage', 'R')">
+        <ion-item>
+          <ion-icon name="call" item-start></ion-icon>
+          Get In Touch
+        </ion-item>
+    </ion-card>
+
+</ion-content>

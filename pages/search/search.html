@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{id.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of search" (click)="itemTapped($event, item)">
+      <ion-avatar item-start>
+        <img  [src]="item.thumbnail_images.full.url">
+      </ion-avatar>
+      <h2 [innerHTML]="item.title"></h2>
+      <p [innerHTML]="item.excerpt"></p>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

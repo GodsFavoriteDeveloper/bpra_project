@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="dark" no-border-bottom>
+    <ion-title>Post Comment</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        Close
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	      <ion-item>
+        <ion-label stacked>Your Name</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Your Email</ion-label>
+        <ion-input type="text" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Type Comment Here</ion-label>
+        <ion-input type="text-area" [(ngModel)]="comment"></ion-input>
+      </ion-item>
+      
+      <ion-row>
+        <button color="dark" ion-button block (click)="closeModal()">Post Comment</button>
+      </ion-row>
+
+</ion-content>

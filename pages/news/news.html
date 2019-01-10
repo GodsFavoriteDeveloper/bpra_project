@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>News Flash</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card *ngFor="let post of news" (click)="itemTapped($event, post)">
+      <img [src]="post.banner" style="width: 100%" alt="">
+        <ion-item>
+          <h2 [innerHTML]="post.title"></h2>
+          <p [innerHTML]="post.excerpt"></p>
+        </ion-item>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Contracts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let contract of contracts" (click)="itemTapped($event, contract)">
+    <ion-item>
+      <ion-avatar item-left>
+        <img [src]="contract.thumbnail">
+      </ion-avatar>
+      <h2 [innerHTML]="contract.title"></h2>
+      <p [innerHTML]="contract.excerpt"></p>
+      <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+    </ion-item>
+    </ion-item-sliding>
+    </ion-list>
+</ion-content>
