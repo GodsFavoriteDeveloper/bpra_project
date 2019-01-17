@@ -41,8 +41,17 @@
           <ion-textarea type="text"></ion-textarea>
         </ion-item>
       </ion-list>
+      <ion-row>
+        <ion-col>
+          <button ion-button block outline (click)="capture()">Take Picture</button>
+        </ion-col>
+        <ion-col>
+            <button ion-button block outline (click)="upload()">Upload Picture</button>
+        </ion-col>
+      </ion-row>
+      
       <div style="padding-left: 5px; padding-right: 5px"><button ion-button (click)="submit()" block>Submit Feedback</button></div>
 
-      <img *ngIf="base64Image" [src]="base64Image" alt="">
+      <div padding class="preview"><img style="width:100%" [src]="picture" *ngIf="picture" /></div>
 
 </ion-content>
