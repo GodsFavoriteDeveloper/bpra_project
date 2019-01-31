@@ -10,19 +10,27 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 })
 export class PostPage {
   data: any;
+  comments: [{"name": "this.name", "description": "this.description"}];
+  hasComments: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing, public modalCtrl: ModalController) {
     this.data = this.navParams.get('post');
-
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostPage');
-    console.log(this.data)
+    console.log(this.data);
+  }
+
+  ionViewDidEnter(){
+    
   }
 
   comment(){
     const myModal = this.modalCtrl.create('CommentModalPage')
+    myModal.onDidDismiss((data)=>{
+      this.comments.push(data)
+    })
     myModal.present();
   }
 
@@ -35,5 +43,7 @@ export class PostPage {
       // Error!
     });
   }
+
+
 
 }

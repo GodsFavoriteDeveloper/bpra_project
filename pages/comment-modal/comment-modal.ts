@@ -8,6 +8,8 @@ import { IonicPage, NavParams, ViewController } from 'ionic-angular';
   templateUrl: 'comment-modal.html',
 })
 export class CommentModalPage {
+  name: string;
+  description: string;
 
   constructor(public navParams: NavParams, public view: ViewController) {
   }
@@ -18,7 +20,14 @@ export class CommentModalPage {
   }
 
   closeModal(){
-  	this.view.dismiss();
+    if(this.name && this.description){
+      const userComment = {"name": this.name, "description": this.description}
+    this.view.dismiss(userComment);
+    
+    } else {
+      alert('Comment or name missing')
+    }
+    
   }
 
 }

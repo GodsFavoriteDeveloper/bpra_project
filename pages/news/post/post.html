@@ -29,7 +29,7 @@
     </ion-row>      
   </ion-card>-->
 
-  <ion-card>
+  <!--<ion-card>
     <ion-item>
       <ion-avatar item-start>
         <img src="assets/img/avatar.png" alt="">
@@ -54,6 +54,23 @@
     <div style="padding: 5px">
       <button (click)="comment()" ion-button block color="primary">Add Comment</button>
     </div>
-  </ion-card>
+  </ion-card>-->
+
+  <div *ngIf="hasComments">
+    <ion-list *ngFor="let comment of comments">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/img/avatar.png" alt="">
+        </ion-avatar>
+        <p><b>{{comment.name}}</b></p>
+        <p>{{comment.description}}</p>
+      </ion-item>
+  </ion-list>
+  </div>
+
+  <div style="padding: 5px">
+      <button (click)="comment()" ion-button block color="primary">Add Comment</button>
+    </div>
+  
 
 </ion-content>
