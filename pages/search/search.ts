@@ -31,7 +31,7 @@ export class SearchPage {
     loader.present();
     this.data.search(this.id.id).subscribe(data => {
       console.log(data, 'this is from messages');
-      this.search = data.posts;
+      this.search = data;
       loader.dismiss();
     })
   }

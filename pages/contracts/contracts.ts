@@ -28,7 +28,7 @@ export class ContractsPage {
     loader.present();
     this.data.getContracts().subscribe(data => {
       console.log(data, 'this is from messages');
-      this.contracts = data.posts;
+      this.contracts = data;
       loader.dismiss();
     })
   }

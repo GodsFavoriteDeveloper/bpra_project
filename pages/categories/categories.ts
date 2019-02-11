@@ -29,7 +29,7 @@ export class CategoriesPage {
     loader.present();
     this.data.getTenderCategories().subscribe(data => {
       console.log(data, 'this is from messages');
-      this.categories = data.categories;
+      this.categories = data;
       loader.dismiss();
     })
   }

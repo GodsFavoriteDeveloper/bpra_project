@@ -10,7 +10,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 })
 export class PostPage {
   data: any;
-  comments: [{"name": "this.name", "description": "this.description"}];
+  comments: ["name"];
   hasComments: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing, public modalCtrl: ModalController) {
@@ -26,10 +26,13 @@ export class PostPage {
     
   }
 
-  comment(){
-    const myModal = this.modalCtrl.create('CommentModalPage')
-    myModal.onDidDismiss((data)=>{
-      this.comments.push(data)
+  async comment(){
+     const myModal = this.modalCtrl.create('CommentModalPage')
+    await myModal.onDidDismiss((data)=>{
+      console.log(data)
+      if(data){
+        
+      }
     })
     myModal.present();
   }
