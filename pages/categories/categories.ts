@@ -22,16 +22,7 @@ export class CategoriesPage {
 
   // Load Categories Data
   loadCategories(){
-    let loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 5000
-    });
-    loader.present();
-    this.data.getTenderCategories().subscribe(data => {
-      console.log(data, 'this is from messages');
-      this.categories = data;
-      loader.dismiss();
-    })
+ 
   }
 
   itemTapped(event, item) {

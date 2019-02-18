@@ -1,36 +1,36 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { DataProvider } from '../../providers/data/data';
+import { DataProvider } from '../../../providers/data/data';
+
 
 @IonicPage()
 @Component({
-  selector: 'page-news',
-  templateUrl: 'news.html',
+  selector: 'page-follow-dollar',
+  templateUrl: 'follow-dollar.html',
 })
-export class NewsPage {
+export class FollowDollarPage {
   posts: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public data: DataProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewsPage');
-    this.loadPosts();
+    console.log('ionViewDidLoad FollowDollarPage');
+    this.loadPostCategory()
   }
 
-  loadPosts(){
+  loadPostCategory(){
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
       duration: 5000
     });
     loader.present();
-    this.data.getPosts().subscribe(data => {
-      console.log(data, 'this is from messages');
+    this.data.getPostCategory('follow-your-dollar').subscribe(data => {
       for(let post of data.posts){
-        post.excerpt = post.excerpt.split('<a')[0] + "</p>";
-        post.thumbnail = post.thumbnail || 'http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png'
-      }
-      this.posts = data.posts;
+          post.excerpt = post.excerpt.split('<a')[0] + "</p>";
+          post.thumbnail = post.thumbnail || 'http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png'
+        }
+        this.posts = data.posts;
       loader.dismiss();
     })
   }

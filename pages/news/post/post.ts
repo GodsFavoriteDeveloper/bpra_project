@@ -10,11 +10,15 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 })
 export class PostPage {
   data: any;
-  comments: ["name"];
-  hasComments: boolean = false;
+  banner: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing, public modalCtrl: ModalController) {
     this.data = this.navParams.get('post');
+    if(this.data.attachments[0].images){
+      this.banner = this.data.attachments[0].images.full.url
+    } else {
+      this.banner = null;
+    }
   }
 
   ionViewDidLoad() {
@@ -38,9 +42,10 @@ export class PostPage {
   }
 
 
-  share(){
+  share(a, b, c, d){
+    console.log(a, c, d)
     // Share via email
-    this.socialSharing.share(this.data.title, this.data.content, this.data.thumbnail, this.data.url).then(() => {
+    this.socialSharing.share(a, b, c, d).then(() => {
       // Success!
     }).catch(() => {
       // Error!

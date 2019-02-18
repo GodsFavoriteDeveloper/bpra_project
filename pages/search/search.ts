@@ -24,16 +24,7 @@ export class SearchPage {
 
   // Load Categories Data
   loadCategories(){
-    let loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 5000
-    });
-    loader.present();
-    this.data.search(this.id.id).subscribe(data => {
-      console.log(data, 'this is from messages');
-      this.search = data;
-      loader.dismiss();
-    })
+
   }
 
   itemTapped(event, tender) {

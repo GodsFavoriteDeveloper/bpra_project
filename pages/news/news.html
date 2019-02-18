@@ -7,9 +7,11 @@
 
 
 <ion-content>
-    <ion-card *ngFor="let post of news" (click)="itemTapped($event, post)">
-      <img [src]="post.banner" style="width: 100%" alt="">
+    <ion-card *ngFor="let post of posts" (click)="itemTapped($event, post)">
         <ion-item>
+          <ion-avatar item-start>
+              <img [src]="post?.thumbnail" alt="">
+          </ion-avatar>
           <h2 [innerHTML]="post.title"></h2>
           <p [innerHTML]="post.excerpt"></p>
         </ion-item>

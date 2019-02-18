@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Water & Sanitation</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-slides spaceBetween="3" slidesPerView="1.2" pager="false">
+        <ion-slide (click)="navigate()">
+          <ion-card class="poster" [style.backgroundImage]="'url(../assets/img/slides/water.jpg)'">
+        </ion-card>
+        </ion-slide>
+    
+        <ion-slide>
+          <ion-card class="poster" [style.backgroundImage]="'url(../assets/img/slides/water1.jpg)'">
+        </ion-card>
+        </ion-slide>
+    
+        <ion-slide>
+          <ion-card class="poster" [style.backgroundImage]="'url(../assets/img/slides/water2.jpg)'">
+        </ion-card>
+        </ion-slide>
+        
+      </ion-slides>
+  <ion-card>
+    <a href="assets/docs/water_shedding.pdf">
+      <ion-item>
+        <h2>Water Shedding 29-1-2019</h2>
+        <p>Download the schedule</p>
+        <ion-icon name="download" item-end></ion-icon>
+      </ion-item>
+    </a>
+  </ion-card>
+
+  <ion-card *ngFor="let post of posts" (click)="itemTapped($event, post)">
+      <ion-item>
+        <ion-avatar item-start>
+            <img [src]="post?.thumbnail" alt="">
+        </ion-avatar>
+        <h2 [innerHTML]="post.title"></h2>
+        <p [innerHTML]="post.excerpt"></p>
+      </ion-item>
+  </ion-card>
+</ion-content>
