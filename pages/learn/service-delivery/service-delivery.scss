@@ -1,3 +1,41 @@
 page-service-delivery {
-
+    a {
+        text-decoration: none !important;
+    }
+    ion-content {
+        background: #eee !important;
+    }
+    ion-slides {
+        display: inline !important;
+    }
+    .poster {
+        height: 150px;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        background-size: cover;
+    }
+    .boxf {
+        background: rgba(0,0,0,0.7);
+        width: 100%;
+        text-align: start;
+        padding: 5px;
+        color: #ffffff;
+    }
+    .swiper-container {
+        height: auto !important;
+    }
+    .swiper-slide {
+        background-size: cover;
+    }
+    ion-avatar img {
+        border-radius: 5px !important;
+    }
+    .item-md h2 {
+        font-size: 1.4rem !important;
+        font-weight: bold !important;
+    }
+    .item-md p {
+        font-size: 1.2rem !important;
+    }
 }

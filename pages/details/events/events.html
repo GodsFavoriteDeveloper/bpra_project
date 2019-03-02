@@ -6,6 +6,15 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+    <ion-card *ngFor="let event of events" (click)="itemTapped($event, event)">
+        <ion-item>
+          <ion-avatar item-start *ngIf="event.thumbnail != null">
+              <img [src]="event.thumbnail" alt="">
+          </ion-avatar>
+          <h2 [innerHTML]="event.title"></h2>
+          <p [innerHTML]="event.excerpt"></p>
+        </ion-item>
+    </ion-card>
 
 </ion-content>

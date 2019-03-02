@@ -1,3 +1,15 @@
 page-stories {
-
+    ion-avatar img {
+        border-radius: 5px !important;
+    }
+    .item-md h2 {
+        font-size: 1.4rem !important;
+        font-weight: bold !important;
+    }
+    .item-md p {
+        font-size: 1.2rem !important;
+    }
+    ion-content {
+        background: #eee !important;
+    }
 }

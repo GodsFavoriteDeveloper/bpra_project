@@ -27,7 +27,8 @@ export class NewsPage {
     this.data.getPosts().subscribe(data => {
       console.log(data, 'this is from messages');
       for(let post of data.posts){
-        post.excerpt = post.excerpt.split('<a')[0] + "</p>";
+        post.excerpt = post.excerpt.substring(0, 100);
+        post.excerpt = post.excerpt + '...'
         post.thumbnail = post.thumbnail || 'http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png'
       }
       this.posts = data.posts;

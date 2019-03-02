@@ -7,14 +7,16 @@
 <ion-content>
 
   <ion-card>
-    <img [src]="banner" style="width: 100%" alt="">
+      <div *ngIf="data.thumbnail_images.full.url != null">
+        <img [src]="data.thumbnail_images.full.url" style="width: 100%" alt="">
+    </div>
   
     <ion-item>
       <span item-start>{{data?.date | date: full}}</span> 
     </ion-item>
   </ion-card>
 
-  <ion-card>
+  <!--<ion-card>
     <ion-item>
       <span><b>Categories: </b></span>
       <span *ngFor="let category of data.categories;  let isLast = last">
@@ -22,7 +24,7 @@
         <span *ngIf="isLast" [innerHTML]="category.title"></span>
       </span>
     </ion-item>
-  </ion-card>
+  </ion-card>-->
 
   <ion-card class="postImages" style="padding: 8px">
     <p [innerHTML]="data.content"></p>

@@ -6,7 +6,7 @@
 
 
 <ion-content>
-    <ion-slides spaceBetween="3" slidesPerView="1.2" pager="false">
+    <!-- <ion-slides spaceBetween="3" slidesPerView="1.2" pager="false">
         <ion-slide (click)="navigate()">
           <ion-card class="poster" [style.backgroundImage]="'url(../assets/img/slides/water.jpg)'">
         </ion-card>
@@ -22,7 +22,7 @@
         </ion-card>
         </ion-slide>
         
-      </ion-slides>
+      </ion-slides> -->
 
   <ion-card *ngFor="let post of posts" (click)="itemTapped($event, post)">
       <ion-item>

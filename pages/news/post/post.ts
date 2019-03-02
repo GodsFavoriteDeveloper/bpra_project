@@ -10,15 +10,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 })
 export class PostPage {
   data: any;
-  banner: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing, public modalCtrl: ModalController) {
     this.data = this.navParams.get('post');
-    if(this.data.attachments[0].images){
-      this.banner = this.data.attachments[0].images.full.url
-    } else {
-      this.banner = null;
-    }
   }
 
   ionViewDidLoad() {

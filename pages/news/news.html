@@ -8,12 +8,12 @@
 
 <ion-content>
     <ion-card *ngFor="let post of posts" (click)="itemTapped($event, post)">
-        <ion-item>
-          <ion-avatar item-start>
-              <img [src]="post?.thumbnail" alt="">
-          </ion-avatar>
+
+          <img style="width: 100%" [src]="post?.thumbnail_images.full.url" alt="">
+
+      <ion-card-content>
           <h2 [innerHTML]="post.title"></h2>
           <p [innerHTML]="post.excerpt"></p>
-        </ion-item>
+      </ion-card-content>
     </ion-card>
 </ion-content>

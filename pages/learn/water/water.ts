@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { DataProvider } from '../../../providers/data/data';
+import { InAppBrowser } from '@ionic-native/in-app-browser'
 
 @IonicPage()
 @Component({
@@ -10,12 +11,16 @@ import { DataProvider } from '../../../providers/data/data';
 export class WaterPage {
   posts: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public data: DataProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public data: DataProvider, private iab: InAppBrowser) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WaterPage');
     this.loadPostCategory()
+  }
+
+  openDocument(){
+    const browser = this.iab.create('http://bpra.org.zw/wp-content/uploads/2019/02/water_shedding.pdf');
   }
 
   loadPostCategory(){
@@ -25,10 +30,7 @@ export class WaterPage {
     });
     loader.present();
     this.data.getPostCategory('water-and-sanitation').subscribe(data => {
-      for(let post of data.posts){
-          post.excerpt = post.excerpt.split('<a')[0] + "</p>";
-          post.thumbnail = post.thumbnail || 'http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png'
-        }
+      
         this.posts = data.posts;
       loader.dismiss();
     })
